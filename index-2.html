@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Analica Creative Studio: pembuatan website, aplikasi, dan konten digital.">
+<title>Analica Creative Studio</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--ink:#f2f3f7;--mute:#a9b0c4;--line:rgba(170,185,230,.22);--f:"Montserrat","Helvetica Neue",Arial,sans-serif;--serif:"Cormorant Garamond",Georgia,serif;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.7 var(--f);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 14px) 28px 14px;background:linear-gradient(rgba(5,5,5,.75),transparent)}
+header img{height:34px;display:block}
+.links{display:flex;gap:44px;font-size:11px;letter-spacing:.18em;font-weight:500}
+.links a{opacity:.85;transition:opacity .3s}.links a:hover{opacity:1}
+.pill{border:1px solid var(--ink);border-radius:99px;padding:9px 20px;font-size:10px;letter-spacing:.16em;font-weight:500;transition:background .3s,color .3s;background:transparent;color:var(--ink);cursor:pointer;font-family:var(--f)}
+.pill:hover{background:var(--ink);color:#050505}
+.mb{display:none;background:none;border:0;color:var(--ink);font:500 11px var(--f);letter-spacing:.2em;padding:8px 0;cursor:pointer}
+section{position:relative;border-top:1px solid var(--line);min-height:62vh;padding:90px 7vw 70px 9vw;overflow:hidden}
+#hero{border:0;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0}
+.hbg{position:absolute;inset:0;background:url(img/hero.jpg) center 55%/cover;animation:zin 2.4s ease-out both}
+@keyframes zin{from{transform:scale(1.08);opacity:0}to{transform:none;opacity:1}}
+.hsh{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 45%,transparent 30%,rgba(5,5,5,.75) 100%),linear-gradient(rgba(5,5,5,.55),transparent 25%,transparent 55%,#050505 100%)}
+.hc{position:relative;z-index:2;margin-top:-4vh}
+.hc small{display:block;font-weight:300;letter-spacing:.7em;font-size:clamp(12px,2.6vw,22px);margin-bottom:6px;padding-left:.7em}
+h1{margin:0;font:800 clamp(52px,14vw,170px)/1 var(--f);color:rgba(255,255,255,.82);letter-spacing:-.01em;text-shadow:0 4px 40px rgba(0,0,0,.45)}
+.num{position:absolute;left:28px;top:84px;z-index:3;font-size:15px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.num:after{content:"";width:1px;height:50px;background:var(--ink)}
+.side{position:absolute;right:26px;top:90px;z-index:3;writing-mode:vertical-rl;font-size:9px;letter-spacing:.22em;display:flex;align-items:center;gap:12px}
+.side:before{content:"";width:1px;height:30px;background:var(--ink)}
+.soc{position:absolute;left:28px;bottom:32px;z-index:3;display:flex;flex-direction:column;gap:16px}
+.soc a{width:22px;height:22px;display:block;opacity:.9;transition:transform .3s}.soc a:hover{transform:translateY(-3px)}
+.soc svg{width:100%;height:100%;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+h2{font:800 clamp(30px,5vw,50px)/1.1 var(--f);margin:0 0 20px}
+.fade{position:absolute;background-repeat:no-repeat}
+#about .fade{left:0;bottom:0;width:58%;height:100%;background:url(img/hero.jpg) 12% 78%/230% auto;opacity:.75}
+#about .fade:after,#kontak .fade:after,#layanan .fade:after{content:"";position:absolute;inset:0}
+#about .fade:after{background:linear-gradient(90deg,transparent 40%,#050505 100%),linear-gradient(#050505,transparent 45%,transparent 70%,#050505)}
+.two{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;min-height:300px}
+.two p{color:var(--mute);margin:0 0 18px;max-width:30em}
+.lnk{display:inline-block;border-bottom:1px solid var(--ink);padding-bottom:3px;font-size:13px}
+.lnk:after{content:"  →"}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:26px 0 20px;max-width:1100px}
+.grid figure{margin:0}
+.th{aspect-ratio:1;border:1px solid var(--line);background:#0b0d12;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:11px;letter-spacing:.15em}
+.th img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.grid figure:hover img{transform:scale(1.05)}
+.grid figcaption{font-size:12px;margin-top:8px;color:var(--mute)}
+.grid.has{display:block;max-width:1100px}
+.pj{display:grid;grid-template-columns:1.25fr 1fr;gap:5vw;align-items:center;margin-bottom:56px}
+.pj:last-child{margin-bottom:0}
+.pj.one{grid-template-columns:1fr;gap:0}
+.pj.one .th img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(transparent,#000 4%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(transparent,#000 4%,#000 94%,transparent);mask-composite:intersect}
+.pj.one .th{aspect-ratio:1;max-width:760px;width:100%}
+.pj.one{grid-template-columns:1fr}
+.pj .th{aspect-ratio:16/9;border-radius:14px}
+.pj .th img{object-fit:contain}
+.pj .info h3{font:800 clamp(22px,3vw,30px)/1.2 var(--f);margin:0 0 6px}
+.pj .tag{color:var(--mute);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px}
+.pj .info p{color:var(--mute);margin:0 0 16px;max-width:30em}
+.pj ul{list-style:none;padding:0;margin:0 0 22px;color:var(--mute);font-size:13px}
+.pj li{padding:7px 0 7px 22px;position:relative}
+.pj li:before{content:"";position:absolute;left:0;top:17px;width:12px;height:1px;background:var(--ink)}
+.note{color:var(--mute);font-size:13px;margin:0}
+.rows{position:relative;z-index:2;max-width:560px}
+.row{display:grid;grid-template-columns:34px 150px 1fr;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line)}
+.row:last-of-type{border:0}
+.row b{font-weight:500;font-size:20px}.row strong{font-size:12px;letter-spacing:.06em;font-weight:500;padding-top:5px}.row span{color:var(--mute);font-size:12.5px;line-height:1.6;padding-top:3px}
+#layanan .fade{right:0;top:0;width:52%;height:100%;background:url(img/layanan.jpg) center/cover;opacity:.9}
+#layanan .fade:after{background:linear-gradient(90deg,#050505 0%,transparent 45%),linear-gradient(#050505,transparent 30%,transparent 70%,#050505)}
+#layanan .pill{margin-top:26px;display:inline-block}
+#kontak .fade{right:0;bottom:0;width:60%;height:100%;background:url(img/kontak.jpg) center bottom/cover;opacity:.85}
+#kontak .fade:after{background:linear-gradient(90deg,#050505 0%,transparent 55%),linear-gradient(#050505,transparent 40%,transparent 80%,#050505)}
+.ct{position:relative;z-index:2;max-width:380px}
+.ct p{margin:0 0 14px}
+.ct input,.ct textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--ink);font:inherit;padding:12px 0;outline:0;resize:none;border-radius:0}
+.ct input:focus,.ct textarea:focus{border-color:var(--ink)}
+::placeholder{color:var(--mute)}
+.ct button{margin-top:22px;background:none;border:0;border-bottom:1px solid var(--ink);color:var(--ink);font:inherit;font-size:13px;padding:0 0 3px;cursor:pointer}
+.ct button:after{content:"  →"}
+.ig{margin-top:22px;font-size:12px;color:var(--mute)}.ig a{border-bottom:1px solid var(--line)}
+footer{border-top:1px solid var(--line);padding:34px 7vw 50px;display:flex;align-items:center;gap:26px;justify-content:center;font:500 clamp(20px,3.4vw,30px) var(--serif)}
+footer:before,footer:after{content:"";flex:1;height:1px;background:var(--line)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--d,0s),transform .9s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.ln{display:block;overflow:hidden;padding-bottom:.1em}
+.ln>i{display:block;font-style:normal;transform:translateY(112%);transition:transform 1s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.in .ln>i{transform:none}
+.ch{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.ch>i{display:inline-block;font-style:normal;transform:translateY(108%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.35s + var(--k)*.08s)}
+@keyframes up{to{transform:none}}
+.hc small{opacity:0;animation:fi 1.4s .9s forwards}
+@keyframes fi{to{opacity:1}}
+.num:after{transform:scaleY(0);transform-origin:top;transition:transform 1s .3s}
+section.in .num:after{transform:none}
+.side{opacity:0;transition:opacity 1s .6s}section.in .side{opacity:1}
+#about:not(.in) .fade,#layanan:not(.in) .fade,#kontak:not(.in) .fade{opacity:0}
+section.in .fade{animation:fin 1.8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes fin{from{opacity:0;transform:scale(1.1)}to{transform:none}}
+@media (min-width:900px){
+ #project{display:grid;grid-template-columns:minmax(240px,1fr) 2fr;column-gap:4vw;align-items:center;min-height:100vh}
+ #project h2{margin:0}
+ #project .grid{margin:0;max-width:none}
+ .pj.one .th{max-width:min(780px,84vh);border:0;background:transparent;margin-left:auto;margin-right:auto}
+}
+@media (min-width:900px){
+ #project.multi{display:block;min-height:auto}
+ #project.multi .grid.has{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:1300px;margin-top:34px}
+ #project.multi .pj.one{margin-bottom:0}
+ #project.multi .pj.one .th{max-width:none}
+}
+@media (max-width:760px){
+ header{padding-left:18px;padding-right:18px}
+ .links{display:none;position:fixed;inset:0;background:rgba(5,5,5,.97);flex-direction:column;align-items:center;justify-content:center;gap:34px;font-size:15px;z-index:60}
+ .links.open{display:flex}.mb{display:block;position:relative;z-index:70}
+ header .pill{display:none}
+ section{padding:90px 22px 60px 22px}
+ .num{left:16px;top:76px;font-size:12px}.num:after{height:30px}.side{display:none}
+ .soc{left:16px}
+ .two{grid-template-columns:1fr;gap:20px;padding-left:34px}
+ #about .fade{width:100%;opacity:.4}
+ .grid{grid-template-columns:repeat(3,1fr)}
+ .pj{grid-template-columns:1fr;gap:22px}
+ .rows{padding-left:34px}.row{grid-template-columns:28px 1fr}.row span{grid-column:2}
+ #layanan .fade,#kontak .fade{width:100%;opacity:.28}
+ .ct{padding-left:34px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hc small,.side{opacity:1;transform:none}.ln>i,.ch>i{transform:none}.num:after{transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <a href="#hero" aria-label="Analica"><img src="img/logo.png" alt="Analica"></a>
+  <nav class="links" id="lk"><a href="#about">TENTANG</a><a href="#project">PROJECT</a><a href="#layanan">LAYANAN</a><a href="#kontak">KONTAK</a></nav>
+  <a class="pill" id="hub" target="_blank" rel="noopener">HUBUNGI KAMI</a>
+  <button class="mb" id="mb" aria-label="Menu">MENU</button>
+</header>
+
+<section id="hero">
+  <div class="hbg"></div><div class="hsh"></div>
+  <div class="num">01</div>
+  <div class="hc"><small>Creative Studio</small><h1>ANALICA</h1></div>
+  <div class="soc" id="soc"></div>
+</section>
+
+<section id="about">
+  <div class="num">02</div><div class="side">TENTANG KAMI</div>
+  <div class="fade"></div>
+  <div class="two">
+    <h2 class="rv">SIAPA<br>ANALICA?</h2>
+    <div class="rv">
+      <p>Analica adalah creative studio yang berfokus pada pembuatan website, aplikasi, dan konten digital untuk membantu brand tumbuh di era modern.</p>
+      <p>Namanya terinspirasi dari edelweis Jawa, bunga yang tumbuh di ketinggian dan bertahan di tempat yang keras. Semangat yang sama kami bawa ke setiap karya.</p>
+      <a class="lnk" href="#layanan">Kenali kami</a>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="num">03</div><div class="side">PORTOFOLIO</div>
+  <h2 class="rv">PROJECT<br>KAMI</h2>
+  <div class="grid rv" id="grid"></div>
+  <p class="note" id="pn"></p>
+</section>
+
+<section id="layanan">
+  <div class="num">04</div><div class="side">LAYANAN KAMI</div>
+  <div class="fade"></div>
+  <h2 class="rv" style="position:relative;z-index:2">LAYANAN<br>KAMI</h2>
+  <div class="rows rv">
+    <div class="row"><b>01</b><strong>PEMBUATAN WEB</strong><span>Website modern, cepat, dan responsif untuk membangun citra brand kamu.</span></div>
+    <div class="row"><b>02</b><strong>PEMBUATAN APLIKASI</strong><span>Aplikasi yang fungsional, intuitif, dan sesuai dengan kebutuhan bisnis.</span></div>
+    <div class="row"><b>03</b><strong>PEMBUATAN KONTEN</strong><span>Konten visual dan kreatif untuk meningkatkan engagement brand.</span></div>
+    <a class="pill" id="order" target="_blank" rel="noopener">PESAN SEKARANG</a>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="num">05</div><div class="side">KONTAK</div>
+  <div class="fade"></div>
+  <div class="ct rv">
+    <h2>MULAI<br>PROJEKMU</h2>
+    <p>Ada pertanyaan? Tulis di sini.</p>
+    <form id="fm"><input id="n" placeholder="Nama" required><input id="e" type="email" placeholder="Email"><textarea id="m" rows="3" placeholder="Pesan" required></textarea><button type="submit">Kirim pesan</button></form>
+    <div class="ig" id="ig"></div>
+  </div>
+</section>
+<footer>Terima Kasih &#9825;</footer>
+
+<script>
+/* ====== UBAH DI SINI ====== */
+var CFG={
+  wa:'6281930042640',
+  instagram:'https://www.instagram.com/analica.project',
+  tiktok:'',   /* isi link TikTok di sini, ikon otomatis muncul */
+  projects:[
+    {judul:'Rapor Narik',jenis:'Aplikasi Keuangan Pribadi',gambar:'img/rapor-narik-persegi.png',link:''},
+    {judul:'Analica Creative Studio',jenis:'Website Company Profile',gambar:'img/analica-website-persegi.png',link:''}
+  ]  /* contoh: {judul:'Kopi Senja',jenis:'Website',gambar:'kopi.jpg',link:'https://...'} */
+};
+/* ========================== */
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var wa=function(t){return 'https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(t)};
+$('hub').href=wa('Halo Analica, saya mau tanya soal layanan kamu.');
+$('order').href=wa('Halo Analica, saya mau pesan layanan. Boleh minta info lebih lanjut?');
+/* sosmed */
+var IC={instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/>',
+tiktok:'<path d="M14 3v11.5a3.6 3.6 0 1 1-3.6-3.6M14 3c.4 2.7 2.1 4.4 4.8 4.7"/>',
+whatsapp:'<path d="M3 21l1.6-4.7A8.6 8.6 0 1 1 8.1 19.5L3 21z"/><path d="M9 8.5c0 3.2 3.3 6.5 6.5 6.5l1.2-1.4-2.1-1-1 .8c-1-.4-2.1-1.5-2.5-2.5l.8-1-1-2.1L9 8.5z"/>'};
+var L=[['instagram',CFG.instagram],['tiktok',CFG.tiktok],['whatsapp','https://wa.me/'+CFG.wa]];
+$('soc').innerHTML=L.filter(function(x){return x[1]}).map(function(x){return '<a href="'+esc(x[1])+'" target="_blank" rel="noopener" aria-label="'+x[0]+'"><svg viewBox="0 0 24 24">'+IC[x[0]]+'</svg></a>'}).join('');
+$('ig').innerHTML='Instagram <a href="'+esc(CFG.instagram)+'" target="_blank" rel="noopener">@analica.project</a>  ·  WhatsApp <a href="https://wa.me/'+CFG.wa+'" target="_blank" rel="noopener">0819-3004-2640</a>';
+/* project */
+var P=CFG.projects,g=$('grid');
+if(P.length){
+  g.classList.add('has');if(P.length>1)$('project').classList.add('multi');
+  g.innerHTML=P.map(function(p){
+    var im='<div class="th"><img loading="lazy" src="'+esc(p.gambar)+'" alt="'+esc(p.judul)+'"></div>';
+    if(!p.deskripsi&&!p.fitur){return '<div class="pj one">'+(p.link?'<a href="'+esc(p.link)+'" target="_blank" rel="noopener">'+im+'</a>':im)+'</div>'}
+    var f=(p.fitur||[]).map(function(x){return '<li>'+esc(x)+'</li>'}).join('');
+    if(!p.deskripsi&&!(p.fitur||[]).length){var one=p.link?'<a href="'+esc(p.link)+'" target="_blank" rel="noopener">'+im+'</a>':im;return '<div class="pj one">'+one+'</div>'}
+    return '<div class="pj">'+im+'<div class="info"><h3>'+esc(p.judul)+'</h3>'+(p.jenis?'<div class="tag">'+esc(p.jenis)+'</div>':'')+(p.deskripsi?'<p>'+esc(p.deskripsi)+'</p>':'')+(f?'<ul>'+f+'</ul>':'')+(p.link?'<a class="lnk" href="'+esc(p.link)+'" target="_blank" rel="noopener">Lihat aplikasi</a>':'')+'</div></div>'}).join('');
+  $('pn').remove();
+}else{
+  var h='';for(var i=0;i<6;i++)h+='<figure><div class="th">'+(i===0?'SEGERA':'')+'</div></figure>';
+  g.innerHTML=h;$('pn').textContent='Karya pertama kami sedang disiapkan.';
+}
+/* form */
+$('fm').onsubmit=function(e){e.preventDefault();
+  var t='Halo Analica, saya '+$('n').value+($('e').value?' ('+$('e').value+')':'')+'. '+$('m').value;
+  window.open(wa(t),'_blank')};
+/* menu hp */
+$('mb').onclick=function(){var o=$('lk').classList.toggle('open');$('mb').textContent=o?'TUTUP':'MENU'};
+$('lk').onclick=function(){$('lk').classList.remove('open');$('mb').textContent='MENU'};
+/* muncul saat scroll */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('h2').forEach(function(h){h.classList.remove('rv');h.classList.add('tx');
+  h.innerHTML=h.innerHTML.split('<br>').map(function(t,i){return '<span class="ln"><i style="--d:'+(i*.12)+'s">'+t+'</i></span>'}).join('')});
+document.querySelectorAll('.rows,.ct,.two>div').forEach(function(p){p.classList.remove('rv');
+  [].forEach.call(p.children,function(c,i){if(c.tagName!=='H2'){c.classList.add('rv');c.style.setProperty('--d',(.2+i*.1)+'s')}})});
+var hh=$('hero').querySelector('h1');hh.setAttribute('aria-label','ANALICA');
+hh.innerHTML=[].map.call('ANALICA',function(c,k){return '<span class="ch" aria-hidden="true"><i style="--k:'+k+'">'+c+'</i></span>'}).join('');
+$('hero').classList.add('in');
+document.querySelectorAll('.rv,.tx,section').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

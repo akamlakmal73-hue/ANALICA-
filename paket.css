@@ -1,0 +1,60 @@
+*{box-sizing:border-box;margin:0}
+:root{--bg:#070c0d;--text:#eef0f1;--mute:rgba(238,240,241,.68);--line:rgba(255,255,255,.14);--glass:rgba(255,255,255,.045);--glass-hl:rgba(150,185,195,.13)}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--text);background:var(--bg);min-height:100vh;line-height:1.5}
+/* Ganti file savana.jpg untuk mengubah latar. Tanpa file itu, latar tetap gelap polos. */
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(5,9,10,.5),rgba(5,9,10,.88)),url("savana.jpg") center/cover no-repeat,var(--bg)}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(20px,4vw,48px)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2em;font-size:.95rem}
+.brand img{height:34px;width:auto}
+.brand small{display:block;font-size:.55rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+.nav nav{display:flex;gap:34px;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.nav nav a{opacity:.85}.nav nav a:hover{opacity:1}
+.pill{border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:10px 22px;font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.pill:hover{background:#fff;color:#07100f}
+main{max-width:1120px;margin:0 auto;padding:clamp(24px,6vw,72px) clamp(20px,4vw,40px) 56px}
+h1{text-align:center;font-weight:500;font-size:clamp(1.6rem,4.6vw,3rem);letter-spacing:.32em;text-transform:uppercase;padding-left:.32em}
+.tabs{display:flex;justify-content:center;gap:10px;margin:28px 0 56px;flex-wrap:wrap}
+.tabs a{padding:8px 20px;border:1px solid var(--line);border-radius:999px;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.tabs a:hover{color:var(--text);border-color:rgba(255,255,255,.4)}
+.tabs a[aria-current]{background:rgba(255,255,255,.1);color:var(--text);border-color:rgba(255,255,255,.4)}
+.slider{--w:min(82vw,340px);position:relative;margin:0 calc(-1 * clamp(20px,4vw,40px))}
+.track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:14px calc((100% - var(--w))/2);outline:none}
+.track::-webkit-scrollbar{display:none}
+.arrow{position:absolute;top:50%;z-index:2;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(7,12,13,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--text);font:400 1.7rem/1 Montserrat,sans-serif;cursor:pointer;padding:0 0 4px}
+.arrow:hover:not(:disabled){background:#fff;color:#07100f}
+.arrow:disabled{opacity:.25;cursor:default}
+.arrow:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.prev{left:clamp(8px,3vw,40px)}.next{right:clamp(8px,3vw,40px)}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:22px}
+.dots button{width:8px;height:8px;padding:0;border-radius:50%;border:0;background:rgba(255,255,255,.3);cursor:pointer}
+.dots button[aria-current]{background:#fff;width:22px;border-radius:8px}
+.card{flex:0 0 var(--w);scroll-snap-align:center;transform:scale(.93);opacity:.7;transition:transform .3s,opacity .3s,background .3s;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 24px 26px;border:1px solid var(--line);border-radius:18px;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.card.hl{background:var(--glass-hl);border-color:rgba(255,255,255,.26);transform:scale(1);opacity:1}
+.badge{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:6px;padding:4px 10px;margin-bottom:14px;min-height:24px}
+.badge.ghost{border-color:transparent}
+.card h2{font-size:1.05rem;font-weight:500;letter-spacing:.02em}
+.price{margin:18px 0 22px;min-height:84px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.price b{font-size:1.9rem;font-weight:500;letter-spacing:-.01em}
+.price b.txt{font-size:1.15rem}
+.price i{font-style:normal;font-size:.9rem;font-weight:500;color:var(--mute)}
+.price s{font-size:.8rem;color:var(--mute)}
+.price small{font-size:.72rem;color:var(--mute)}
+.card ul{list-style:none;padding:0;margin:0 0 26px;text-align:left;font-size:.78rem;color:var(--text);display:grid;gap:10px;width:100%}
+.card li{display:flex;gap:10px;align-items:flex-start}
+.card li::before{content:"";flex:none;width:6px;height:10px;margin:3px 4px 0 2px;border:solid var(--text);border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
+.btn{margin-top:auto;width:100%;padding:13px 10px;border:1px solid rgba(255,255,255,.5);border-radius:10px;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s}
+.btn:hover{background:rgba(255,255,255,.12)}
+.hl .btn{background:#f3f4f4;color:#0a1112;border-color:#f3f4f4}.hl .btn:hover{background:#fff}
+.foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-size:.74rem;color:var(--mute)}
+.side-num{position:fixed;left:clamp(20px,4vw,48px);top:132px;z-index:1;font-size:.85rem;font-weight:600;letter-spacing:.08em}
+.side-num::after{content:"";display:block;width:1px;height:64px;margin-top:14px;background:rgba(255,255,255,.5)}
+@media(max-width:860px){
+ .side-num{position:static;text-align:center;margin-bottom:10px}.side-num::after{display:none}
+ .nav nav{display:none}
+ .arrow{width:38px;height:38px;font-size:1.4rem}
+ h1{letter-spacing:.2em;padding-left:.2em}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
